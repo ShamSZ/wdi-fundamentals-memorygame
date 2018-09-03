@@ -13,7 +13,7 @@ h2 {
 	letter-spacing: 1px;
 	font-size: 20px;
 }
-h1, h2, .nav {
+h1, h2, .nav, button {
 	text-transform: uppercase;
 }
 .nav {
@@ -25,7 +25,19 @@ h1, h2, .nav {
 	text-decoration: none;
 	margin: 0 20px;
 }
-
+button {
+	font-family: "Raleway", sans-serif;
+	color: #FFFFFF;
+	background-color: #00A6B3;
+	letter-spacing: 2px;
+	font-weight: 600;
+	font-size: 18px;
+	padding: 5px 10px;
+	margin: 5px 50px 0 50px;
+	border: 0 solid transparent;
+	border-radius: 5px;
+	outline-color: #F15B31;
+}
 nav {
 	background-color: #00A6B3;
 	color: #FFFFFF;

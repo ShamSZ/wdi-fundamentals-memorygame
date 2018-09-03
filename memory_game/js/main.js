@@ -27,8 +27,8 @@ var checkForMatch = function() {
 		}
 	else {
 			alert("Sorry, try again.");
-		}
-}
+		};
+};
 var flipCard = function() {
 	var cardId = this.getAttribute('data-id');
 	this.setAttribute('src', cards[cardId].cardImage);
@@ -38,9 +38,9 @@ var flipCard = function() {
 	console.log(cards[cardId].suit);
 	if (cardsInPlay.length === 2) {
 		checkForMatch();
-	}
+	};
 };
-var createBoard = function(){
+var createBoard = function() {
 	for (var i = 0; i < cards.length; i++) {
 		var cardElement = document.createElement('img');
 		cardElement.setAttribute('src', 'images/back.png');
@@ -49,4 +49,23 @@ var createBoard = function(){
 		document.getElementById('game-board').appendChild(cardElement);
 	};
 };
-createBoard();
+
+var shuffle = function (cards) {
+	for (var i = 0; i < cards.length - 1; i++) {
+	var j = i + Math.floor(Math.random() * (cards.length - i));
+	var temp = cards[j];
+	cards[j] = cards[i];
+	cards[i] = temp;
+	};
+};
+
+var deal = function() {
+	document.getElementById('game-board').innerHTML = "";
+	cardsInPlay.length = 0;
+	createBoard();
+	shuffle(cards);
+};	
+
+document.getElementById("deal").addEventListener('click', deal);
+
+
